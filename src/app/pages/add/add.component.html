@@ -1,0 +1,15 @@
+<form [formGroup]="newContactForm" (ngSubmit)="onSubmit()">
+    <label for="name">name<input type="text" formControlName="name"></label>
+    <div *ngIf="newContactForm.get('name')?.hasError('required') && (newContactForm.get('name')?.dirty || submitted)">Este campo es requerido</div>
+    <div *ngIf="newContactForm.get('name')?.hasError('minlength') && (newContactForm.get('name')?.dirty || submitted)">Name tiene que tener mas de 3 caracteres</div>
+    <label for="surname">surname<input type="text" formControlName="surname"></label>
+    <div *ngIf="newContactForm.get('surname')?.hasError('required') && (newContactForm.get('surname')?.dirty || submitted)">Este campo es requerido</div>
+    <div *ngIf="newContactForm.get('surname')?.hasError('minlength') && (newContactForm.get('surname')?.dirty || submitted)">Surname tiene que tener mas de 3 caracteres</div>
+    <label for="email">email<input type="text" formControlName="email"></label>
+    <div *ngIf="newContactForm.get('email')?.hasError('required') && (newContactForm.get('email')?.dirty || submitted)">Este campo es requerido</div>
+    <div *ngIf="newContactForm.get('email')?.hasError('pattern') && (newContactForm.get('email')?.dirty || submitted)">Email tiene que tener un formato valido</div>
+    <label for="phone">phone<input type="text" formControlName="phone"></label>
+    <div *ngIf="newContactForm.get('phone')?.hasError('required') && (newContactForm.get('phone')?.dirty || submitted)">Este campo es requerido</div>
+    <div *ngIf="newContactForm.get('phone')?.hasError('pattern') && (newContactForm.get('phone')?.dirty || submitted)">Phone tiene que tener un formato valido</div>
+    <button>Añadir</button>
+</form>

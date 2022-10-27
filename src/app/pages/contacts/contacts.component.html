@@ -1,0 +1,5 @@
+<div *ngFor="let item of contactList">
+    <p>{{item.name}}
+        <a routerLink="/contacts/{{item.id}}" >View Contact</a>
+    </p>
+</div>
